@@ -15,7 +15,7 @@ class Multiton
 int Multiton::i = 0;
 Multiton::Multiton() 
 {
-	std::cout << "I am in here" << std::endl;
+	std::cout << "Object created" << std::endl;
 }
 Multiton::~Multiton() 
 {
@@ -40,8 +40,7 @@ Multiton* Multiton::Instance ()
 		std::cout << "Instance 2" << std::endl; 
 	}
 	++i;
-	if (i % 2 == 0) {std::cout << "Now returning instance 2 " << std::endl; return _instance2; }
-	std::cout << "Returning Instance 1" << std::endl;
+	if (i % 2 == 0) {return _instance2;}
 	return _instance;
 }
 int main () 
